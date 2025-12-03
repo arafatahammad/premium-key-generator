@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Key Generator - Upgraded</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: #fff;
+    }
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border: 1px solid #334155;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #3b82f6;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #0f172a;
+      border-radius: 12px;
+      min-height: 100px;
+      font-family: monospace;
+      font-size: 14px;
+      overflow-wrap: break-word;
+      white-space: pre-line;
+      border: 1px solid #334155;
+      color: #a5b4fc;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #475569;
+      margin-top: 10px;
+      background: #0f172a;
+      color: #fff;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+    label {
+      margin-top: 15px;
+      display: block;
+      font-size: 15px;
+    }
+    .photo {
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      display:block;
+      margin:0 auto 15px;
+      object-fit:cover;
+      border:3px solid #3b82f6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAIAAABAHXg9AAAAAXNSR0IArs4c6QAAAANzQklUCAgI2+FP4AAAIABJREFUeJzsvemy" class="photo" />
+
+    <h2>ARAFAT X YZ — Premium Key Generator</h2>
+
+    <label>How many keys?</label>
+    <input type="number" id="keyCount" placeholder="Enter key amount" />
+
+    <label>Prefix</label>
+    <input type="text" id="prefix" placeholder="Example: PREM, VIP, GOLD" />
+
+    <button onclick="generateKeys()">Generate Keys</button>
+
+    <div class="output" id="output">Generated keys will appear here...</div>
+  </div>
+
+  <script>
+    function randomBlock() {
+      return Math.random().toString(36).substring(2, 6).toUpperCase();
+    }
+
+    function generateOne(prefix) {
+      const now = new Date();
+      const expires = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+
+      const timestamp = now.toLocaleString();
+      const expireText = expires.toLocaleString();
+
+      return `${prefix}-${randomBlock()}-${randomBlock()}-${randomBlock()} | Generated: ${timestamp} | Expires: ${expireText} | ARAFAT X YZ`;
+    }
+
+    function generateKeys() {
+      let count = parseInt(document.getElementById('keyCount').value);
+      let prefix = document.getElementById('prefix').value || 'PREM';
+
+      if (!count || count < 1) return alert('Enter a valid key amount');
+
+      let keys = [];
+      for (let i = 0; i < count; i++) {
+        keys.push(generateOne(prefix));
+      }
+
+      document.getElementById('output').innerText = keys.join("\n\n");
+    }
+  </script>
+</body>
+
+
+<!-- Public Free Version Enabled -->
+<!-- Anyone can use this website without restrictions -->
+</html>
